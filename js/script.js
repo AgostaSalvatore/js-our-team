@@ -38,10 +38,11 @@ const teamMembers = [
   ];
 
 //recupero gli elementi del DOM
-const nameField = document.getElementById("name");
-const roleField = document.getElementById("role");
-const emailField = document.getElementById("email");
-const imageField = document.getElementById("image");
+const nameField = document.getElementById("nameInput");
+const roleField = document.getElementById("roleInput");
+const emailField = document.getElementById("emailInput");
+const imageField = document.getElementById("imageInput");
+const sendButton = document.getElementById("send");
 
 //ciclo per stampare i dati dei team
 const createMemberCard = (member) => {
@@ -50,7 +51,7 @@ const createMemberCard = (member) => {
 
   //creo il template
   const card = `<div class="col-12 col-md-6 col-lg-4">
-                  <div class="team-card">
+                  <div class="team-card mt-5">
                     <div class="card d-flex flex-row">
                       <img src="${img}" alt="" class="me-3" id="image">
                       <div>
@@ -77,3 +78,34 @@ const renderTeamMembers = (array) => {
 
 // Richiamo la funzione per stampare i dati dei team
 renderTeamMembers(teamMembers);
+
+//aggiungo evento al bottone
+sendButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  const nameValue = nameField.value;
+  const roleValue = roleField.value;
+  const emailValue = emailField.value;
+  const imageValue = imageField.value;
+
+  if(!nameValue || !roleValue || !imageValue){
+    alert('Compilare tutti i campi');
+    return;
+  }
+
+  const newMember = {
+    name: nameValue,
+    role: roleValue,
+    email: emailValue,
+    img: imageValue
+  }
+
+  teamMembers.push(newMember);
+
+  //rendo il form vuoto
+  nameField.value = '';
+  roleField.value = '';
+  emailField.value = '';
+  imageField.value = '';
+
+  renderTeamMembers(teamMembers);
+})
