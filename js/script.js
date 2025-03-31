@@ -64,4 +64,17 @@ const createMemberCard = (member) => {
   return card;
 }
 
+//funzione che mi renderizza il contenuto
+const renderTeamMembers = (array) => {
+  let cards = '';
+  //ciclo per stampare i dati dei team
+  for (let i = 0; i < array.length; i++) {
+    cards += createMemberCard(array[i]);
+  }
+  //aggiungo il template al DOM
+  document.getElementById("team-members").innerHTML = cards;
+}
+
+// Richiamo la funzione per stampare i dati dei team
+renderTeamMembers(teamMembers);
 
