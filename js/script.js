@@ -45,5 +45,23 @@ const imageField = document.getElementById("image");
 
 //ciclo per stampare i dati dei team
 const createMemberCard = (member) => {
-  
+  //destrutturazione dell'oggetto
+  const {name, role, email, img} = member;
+
+  //creo il template
+  const card = `<div class="col-12 col-md-6 col-lg-4">
+                  <div class="team-card">
+                    <div class="card d-flex flex-row">
+                      <img src="${img}" alt="" class="me-3" id="image">
+                      <div>
+                        <h3 class="mb-1 mt-3" id="name">${name}</h3>
+                        <p class="mb-1" id="role">${role}</p>
+                        <a href="" id="email" class="mb-0">${email}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>`
+  return card;
 }
+
+
