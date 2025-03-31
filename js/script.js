@@ -77,4 +77,3 @@ const renderTeamMembers = (array) => {
 
 // Richiamo la funzione per stampare i dati dei team
 renderTeamMembers(teamMembers);
-
