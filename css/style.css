@@ -11,4 +11,19 @@ h3{
     font-family: "CCDashDecent W00 Heavy";
 }
 
+.card{
+    background-color: black;
+    color: white;
+}
+
+.card img{
+    width: 30%;
+    object-fit: cover;
+
+}
+
+a{
+    color:#4aa2c8;
+    text-decoration: none;
+}
 
