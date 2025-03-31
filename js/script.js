@@ -36,3 +36,14 @@ const teamMembers = [
       img: "img/female3.png"
     }
   ];
+
+//recupero gli elementi del DOM
+const nameField = document.getElementById("name");
+const roleField = document.getElementById("role");
+const emailField = document.getElementById("email");
+const imageField = document.getElementById("image");
+
+//ciclo per stampare i dati dei team
+const createMemberCard = (member) => {
+  
+}
